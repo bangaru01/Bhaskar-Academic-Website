@@ -1,0 +1,1148 @@
+{
+  "profile": {
+    "name": "Bhaskararao Bangaru",
+    "credential": "Ph.D.",
+    "role": "Computational Chemist · Brain Pool Researcher",
+    "institution": "Ewha Womans University · Seoul, South Korea",
+    "eyebrow": "COMPUTATIONAL CHEMISTRY  /  CATALYSIS  /  MOLECULAR MODELING",
+    "headline": "Mechanisms. Selectivity. Molecular discovery.",
+    "summary": "Computational chemist investigating reaction mechanisms, asymmetric catalysis, C–H functionalization and molecular materials with quantum-chemical methods. Current interests include transition-state ensembles, molecular simulation, QM/MM, and data-driven approaches to molecular discovery.",
+    "orcid": "https://orcid.org/0000-0003-1618-0707",
+    "github": "https://github.com/bangaru01",
+    "cvUrl": "cv.pdf",
+    "scholar": "https://scholar.google.com/citations?user=sAuzLkEAAAAJ&hl=en",
+    "scholarAlerts": "https://scholar.google.com/citations?user=sAuzLkEAAAAJ&hl=en",
+    "rankless": "https://www.rankless.org/authors/bangaru-bhaskararao",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57034214700",
+    "linkedin": "https://www.linkedin.com/in/bhaskararao-bangaru-5696314a/",
+    "webOfScience": "https://www.webofscience.com/",
+    "email": "bangaru.bhaskararao@gmail.com",
+    "phone": ""
+  },
+  "categories": [
+    {
+      "id": "dual",
+      "code": "01",
+      "name": "Dual Chiral & Cooperative Catalysis",
+      "summary": "Mechanistic origins of stereodivergence and catalyst cooperation, classified by catalyst pairs.",
+      "subs": [
+        "Metal–Metal",
+        "Metal–Organo",
+        "Organo–Organo"
+      ]
+    },
+    {
+      "id": "ch",
+      "code": "02",
+      "name": "C–H Bond Functionalization",
+      "summary": "Selectivity and elementary steps in transition-metal-mediated C–H bond activation.",
+      "subs": [
+        "C(sp²)–H activation",
+        "C(sp³)–H activation",
+        "Mixed sp²/sp³ selectivity",
+        "Oxidants & additives"
+      ]
+    },
+    {
+      "id": "radical",
+      "code": "03",
+      "name": "Radical & Photoredox Chemistry",
+      "summary": "Radical transfer pathways, photoinduced reactions and isotope-based kinetic probes.",
+      "subs": [
+        "Radical transfer",
+        "Metallaphotoredox",
+        "Kinetic isotope effects"
+      ]
+    },
+    {
+      "id": "organo",
+      "code": "04",
+      "name": "Asymmetric Organocatalysis",
+      "summary": "Cinchona and related organocatalyst activation mechanisms and transition-state stereocontrol.",
+      "subs": [
+        "Cinchona catalysis",
+        "Ketenes & cycloadditions",
+        "Stereoselective mechanisms"
+      ]
+    },
+    {
+      "id": "stereo",
+      "code": "05",
+      "name": "Reaction Mechanisms & Selectivity",
+      "summary": "Catalytic reaction pathways, chemical bonding, TS ensembles and stereocontrol.",
+      "subs": [
+        "Chiral Ir catalysis",
+        "Cycloetherification",
+        "Conformational sampling",
+        "Transition-state analysis"
+      ]
+    },
+    {
+      "id": "synthesis",
+      "code": "06",
+      "name": "Synthetic Methodology",
+      "summary": "Computational insight into practical methods for building functional organic molecules.",
+      "subs": [
+        "Fluorinated molecules",
+        "Reaction development"
+      ]
+    },
+    {
+      "id": "materials",
+      "code": "07",
+      "name": "Materials & Energy",
+      "summary": "Perovskite interfaces, surface passivation, and catalytic transformations involving small molecules.",
+      "subs": [
+        "Perovskite passivation",
+        "CO₂ / CH₄ conversion",
+        "Electronic structure & materials"
+      ]
+    },
+    {
+      "id": "ml",
+      "code": "08",
+      "name": "Machine Learning & Scientific Code",
+      "summary": "Predictive models, molecular data analysis and reproducible computational chemistry workflows.",
+      "subs": [
+        "Asymmetric catalysis ML",
+        "Scientific Python",
+        "Research software"
+      ]
+    },
+    {
+      "id": "drug",
+      "code": "09",
+      "name": "Drug Discovery & Molecular Simulation",
+      "summary": "Developing drug-discovery approaches combining physics-based methods and data-driven research.",
+      "subs": [
+        "QM/MM & MD",
+        "Free Energy Perturbation",
+        "AI-assisted drug discovery"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "id": "b2015",
+      "year": "2015",
+      "title": "Origin of Stereodivergence in Cooperative Asymmetric Catalysis with Simultaneous Involvement of Two Chiral Catalysts",
+      "journal": "Journal of the American Chemical Society",
+      "authors": "Bangaru Bhaskararao; Raghavan B. Sunoj",
+      "doi": "10.1021/jacs.5b05902",
+      "group": "dual",
+      "sub": "Metal–Organo",
+      "abstract": "DFT transition-state study of iridium-phosphoramidite and cinchona amine cooperative catalysis; catalyst configuration controls stereodivergent outcomes.",
+      "skills": [
+        "DFT",
+        "Transition states",
+        "NCI",
+        "Stereodivergence"
+      ],
+      "status": "Published",
+      "topics": [
+        "dual"
+      ],
+      "journalAbbr": "J. Am. Chem. Soc.",
+      "volume": "137",
+      "issue": "50",
+      "pages": "15712–15722",
+      "authorsACS": "Bhaskararao, B.; Sunoj, R. B.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2016",
+      "year": "2016",
+      "title": "Directing group assisted meta-hydroxylation by C–H activation",
+      "journal": "Chemical Science",
+      "authors": "Arun Maji; Bangaru Bhaskararao; Santanu Singha; Raghavan B. Sunoj; Debabrata Maiti",
+      "doi": "10.1039/C5SC04060D",
+      "group": "ch",
+      "sub": "C(sp²)–H activation",
+      "abstract": "Template-assisted meta hydroxylation of aromatic C–H bonds, combining experiment and mechanistic computations, including HFIP solvent effects.",
+      "skills": [
+        "DFT",
+        "C–H functionalization",
+        "Mechanism"
+      ],
+      "status": "Published",
+      "topics": [
+        "ch"
+      ],
+      "journalAbbr": "Chem. Sci.",
+      "volume": "7",
+      "issue": "5",
+      "pages": "3147–3153",
+      "authorsACS": "Maji, A.; Bhaskararao, B.; Singha, S.; Sunoj, R. B.; Maiti, D.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2017a",
+      "year": "2017",
+      "title": "Catalytic Arene meta-C–H Functionalization Exploiting a Quinoline-Based Template",
+      "journal": "ACS Catalysis",
+      "authors": "Uttam Dutta; Atanu Modak; Bangaru Bhaskararao; et al.",
+      "doi": "10.1021/acscatal.7b00247",
+      "group": "ch",
+      "sub": "C(sp²)–H activation",
+      "abstract": "Quinoline-based directing group supports meta alkenylation and acetoxylation; mechanistic studies include DFT and spectroscopy.",
+      "skills": [
+        "DFT",
+        "Pd catalysis",
+        "Meta selectivity"
+      ],
+      "status": "Published",
+      "topics": [
+        "ch"
+      ],
+      "journalAbbr": "ACS Catal.",
+      "volume": "7",
+      "issue": "5",
+      "pages": "3162–3168",
+      "authorsACS": "Dutta, U.; Modak, A.; Bhaskararao, B.; Bera, M.; Bag, S.; Mondal, A.; Lupton, D. W.; Sunoj, R. B.; Maiti, D.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2017b",
+      "year": "2017",
+      "title": "Experimental and Computational Studies on Remote γ-C(sp³)–H Silylation and Germanylation of Aliphatic Carboxamides",
+      "journal": "ACS Catalysis",
+      "authors": "Arghya Deb; Sukriti Singh; Kapileswar Seth; Sandeep Pimparkar; Bangaru Bhaskararao; et al.",
+      "doi": "10.1021/acscatal.7b03056",
+      "group": "ch",
+      "sub": "C(sp³)–H activation",
+      "abstract": "Pd(II) bidentate-directed remote gamma C–H silylation/germanylation; mechanistic experiments and DFT assess elementary steps.",
+      "skills": [
+        "DFT",
+        "Remote C–H activation",
+        "Pd chemistry"
+      ],
+      "status": "Published",
+      "topics": [
+        "ch"
+      ],
+      "journalAbbr": "ACS Catal.",
+      "volume": "7",
+      "issue": "12",
+      "pages": "8171–8175",
+      "authorsACS": "Deb, A.; Singh, S.; Seth, K.; Pimparkar, S.; Bhaskararao, B.; Guin, S.; Sunoj, R. B.; Maiti, D.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2017c",
+      "year": "2017",
+      "title": "Asymmetric Dual Chiral Catalysis using Iridium Phosphoramidites and Diarylprolinol Silyl Ethers: Insights into Stereodivergence",
+      "journal": "ACS Catalysis",
+      "authors": "Bangaru Bhaskararao; Raghavan B. Sunoj",
+      "doi": "10.1021/acscatal.7b02776",
+      "group": "dual",
+      "sub": "Metal–Organo",
+      "abstract": "DFT study of iridium phosphoramidite and organocatalyst enamine pathways; noncovalent interactions influence relative stereoselectivity.",
+      "skills": [
+        "DFT",
+        "NCI",
+        "Iridium catalysis",
+        "Stereoselectivity"
+      ],
+      "status": "Published",
+      "topics": [
+        "dual"
+      ],
+      "journalAbbr": "ACS Catal.",
+      "volume": "7",
+      "issue": "10",
+      "pages": "6675–6685",
+      "authorsACS": "Bhaskararao, B.; Sunoj, R. B.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2017d",
+      "year": "2017",
+      "title": "Exploring the Mechanism and Stereoselectivity in Chiral Cinchona-Catalyzed Heterodimerization of Ketenes",
+      "journal": "The Journal of Organic Chemistry",
+      "authors": "Bangaru Bhaskararao; Garima Jindal; Raghavan B. Sunoj",
+      "doi": "10.1021/acs.joc.7b02517",
+      "group": "organo",
+      "sub": "Ketenes & cycloadditions",
+      "abstract": "M06-2X DFT analysis of [2+2] ketene heterodimerization to β-lactones; cinchona catalysis and LiClO4 affect stereocontrol.",
+      "skills": [
+        "DFT",
+        "Cinchona catalysis",
+        "NCI",
+        "Stereoselectivity"
+      ],
+      "status": "Published",
+      "topics": [
+        "organo"
+      ],
+      "journalAbbr": "J. Org. Chem.",
+      "volume": "82",
+      "issue": "24",
+      "pages": "13449–13458",
+      "authorsACS": "Bhaskararao, B.; Jindal, G.; Sunoj, R. B.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2018",
+      "year": "2018",
+      "title": "Two chiral catalysts in action: insights into cooperativity and stereoselectivity in proline and cinchona-thiourea dual organocatalysis",
+      "journal": "Chemical Science",
+      "authors": "Bangaru Bhaskararao; Raghavan B. Sunoj",
+      "doi": "10.1039/C8SC03078B",
+      "group": "dual",
+      "sub": "Organo–Organo",
+      "abstract": "Computational investigation of proline and cinchona-thiourea dual organocatalysis, catalyst compatibility and stereoselectivity.",
+      "skills": [
+        "DFT",
+        "Organocatalysis",
+        "Transition states"
+      ],
+      "status": "Published",
+      "topics": [
+        "dual"
+      ],
+      "journalAbbr": "Chem. Sci.",
+      "volume": "9",
+      "issue": "46",
+      "pages": "8738–8747",
+      "authorsACS": "Bhaskararao, B.; Sunoj, R. B.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2020a",
+      "year": "2020",
+      "title": "Is silver a mere terminal oxidant in palladium catalyzed C–H bond activation reactions?",
+      "journal": "Chemical Science",
+      "authors": "Bangaru Bhaskararao; Sukriti Singh; Megha Anand; et al.",
+      "doi": "10.1039/C9SC04540F",
+      "group": "ch",
+      "sub": "Oxidants & additives",
+      "abstract": "DFT suggests silver can play an active Pd–Ag bimetallic role in four aromatic C–H activation reactions, not merely serve as a terminal oxidant.",
+      "skills": [
+        "DFT",
+        "Pd–Ag",
+        "C(sp²)–H activation"
+      ],
+      "status": "Published",
+      "topics": [
+        "ch"
+      ],
+      "journalAbbr": "Chem. Sci.",
+      "volume": "11",
+      "issue": "1",
+      "pages": "208–216",
+      "authorsACS": "Bhaskararao, B.; Singh, S.; Anand, M.; Verma, P.; Prakash, P.; C, A.; Malakar, S.; Schaefer, H. F.; Sunoj, R. B.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2020b",
+      "year": "2020",
+      "title": "A unified machine-learning protocol for asymmetric catalysis as a proof of concept demonstration using asymmetric hydrogenation",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "authors": "Sukriti Singh; Monika Pareek; Avtar Changotra; Sayan Banerjee; Bangaru Bhaskararao; et al.",
+      "doi": "10.1073/pnas.1916392117",
+      "group": "ml",
+      "sub": "Asymmetric catalysis ML",
+      "abstract": "Proof-of-concept machine-learning workflow for asymmetric hydrogenation catalysis, combining chemical descriptors and predictive modeling.",
+      "skills": [
+        "Machine learning",
+        "Catalysis",
+        "Molecular descriptors"
+      ],
+      "status": "Published",
+      "topics": [
+        "ml"
+      ],
+      "journalAbbr": "Proc. Natl. Acad. Sci. U.S.A.",
+      "volume": "117",
+      "issue": "3",
+      "pages": "1339–1345",
+      "authorsACS": "Singh, S.; Pareek, M.; Changotra, A.; Banerjee, S.; Bhaskararao, B.; Balamurugan, P.; Sunoj, R. B.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2020c",
+      "year": "2020",
+      "title": "Insights on Absolute and Relative Stereocontrol in Stereodivergent Cooperative Catalysis",
+      "journal": "Journal of the American Chemical Society",
+      "authors": "Avtar Changotra; Bangaru Bhaskararao; Christopher M. Hadad; Raghavan B. Sunoj",
+      "doi": "10.1021/jacs.9b13962",
+      "group": "dual",
+      "sub": "Metal–Metal",
+      "abstract": "DFT explains how chiral Cu–Walphos and Ir-phosphoramidite catalyst combinations control stereodivergence via noncovalent interactions.",
+      "skills": [
+        "DFT",
+        "Cu/Ir dual catalysis",
+        "NCI"
+      ],
+      "status": "Published",
+      "topics": [
+        "dual"
+      ],
+      "journalAbbr": "J. Am. Chem. Soc.",
+      "volume": "142",
+      "issue": "21",
+      "pages": "9612–9624",
+      "authorsACS": "Changotra, A.; Bhaskararao, B.; Hadad, C. M.; Sunoj, R. B.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2020d",
+      "year": "2020",
+      "title": "Rational design of metal–ligands for the conversion of CH₄ and CO₂ to acetates: role of acids and Lewis acids",
+      "journal": "Journal of Materials Chemistry A",
+      "authors": "Bangaru Bhaskararao; Dong Yeon Kim; Jenica Marie L. Madridejos; Cheol-Min Park; Kwang S. Kim",
+      "doi": "10.1039/D0TA04002A",
+      "group": "materials",
+      "sub": "CO₂ / CH₄ conversion",
+      "abstract": "Computational screening of Ru/Rh/Ir metal–ligand complexes for conversion of methane and carbon dioxide, examining acid and Lewis acid effects.",
+      "skills": [
+        "DFT",
+        "Catalysis",
+        "CO₂ conversion"
+      ],
+      "status": "Published",
+      "topics": [
+        "materials"
+      ],
+      "journalAbbr": "J. Mater. Chem. A",
+      "volume": "8",
+      "issue": "29",
+      "pages": "14671–14679",
+      "authorsACS": "Bhaskararao, B.; Kim, D. Y.; Madridejos, J. M. L.; Park, C.-M.; Kim, K. S.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2021",
+      "year": "2021",
+      "title": "Inherent Selectivity of Pd C–H Activation from Different Metal Oxidation States",
+      "journal": "Organometallics",
+      "authors": "Peter A. Amadeo; Bangaru Bhaskararao; Yun-Fang Yang; Marisa C. Kozlowski",
+      "doi": "10.1021/acs.organomet.1c00011",
+      "group": "ch",
+      "sub": "Mixed sp²/sp³ selectivity",
+      "abstract": "Mechanistic study comparing C–H activation pathways at palladium in different oxidation states and associated selectivity.",
+      "skills": [
+        "DFT",
+        "Oxidation state",
+        "C–H activation"
+      ],
+      "status": "Published",
+      "topics": [
+        "ch"
+      ],
+      "journalAbbr": "Organometallics",
+      "volume": "40",
+      "issue": "14",
+      "pages": "2290–2294",
+      "authorsACS": "Amadeo, P. A.; Bhaskararao, B.; Yang, Y.-F.; Kozlowski, M. C.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2022",
+      "year": "2022",
+      "title": "Ir and NHC Dual Chiral Synergetic Catalysis: Mechanism and Stereoselectivity in γ-Butyrolactone Formation",
+      "journal": "Journal of the American Chemical Society",
+      "authors": "Bangaru Bhaskararao; Madeline E. Rotella; Dong Yeon Kim; et al.",
+      "doi": "10.1021/jacs.2c07376",
+      "group": "dual",
+      "sub": "Metal–Organo",
+      "abstract": "Quantum-mechanical study of cooperative iridium and NHC catalytic cycles governing γ-butyrolactone stereoselectivity.",
+      "skills": [
+        "DFT",
+        "Ir/NHC",
+        "Transition states",
+        "NCI"
+      ],
+      "status": "Published",
+      "topics": [
+        "dual"
+      ],
+      "journalAbbr": "J. Am. Chem. Soc.",
+      "volume": "144",
+      "issue": "35",
+      "pages": "16171–16183",
+      "authorsACS": "Bhaskararao, B.; Rotella, M. E.; Kim, D. Y.; Kee, J.-M.; Kim, K. S.; Kozlowski, M. C.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2023a",
+      "year": "2023",
+      "title": "Coordination modulated passivation for stable organic-inorganic perovskite solar cells",
+      "journal": "Chemical Engineering Journal",
+      "authors": "Sandeep Kajal; Jaeki Jeong; Jongdeuk Seo; Rohit Anand; et al.",
+      "doi": "10.1016/j.cej.2022.138740",
+      "group": "materials",
+      "sub": "Perovskite passivation",
+      "abstract": "Investigates coordination-modulated passivation of organic–inorganic perovskites to improve device efficiency and stability.",
+      "skills": [
+        "Materials",
+        "Interfaces",
+        "Passivation"
+      ],
+      "status": "Published",
+      "topics": [
+        "materials"
+      ],
+      "journalAbbr": "Chem. Eng. J.",
+      "volume": "451",
+      "issue": "",
+      "pages": "138740",
+      "authorsACS": "Kajal, S.; Jeong, J.; Seo, J.; Anand, R.; Kim, Y.; Bhaskararao, B.; Park, C. B.; Yeop, J.; Hagdfeldt, A.; Kim, J. Y.; Kim, K. S.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2023b",
+      "year": "2023",
+      "title": "Practical Synthesis of Terminal Vinyl Fluorides",
+      "journal": "The Journal of Organic Chemistry",
+      "authors": "Ivan Volchkov; Brent V. Powell; Olga V. Zatolochnaya; et al.",
+      "doi": "10.1021/acs.joc.3c00917",
+      "group": "synthesis",
+      "sub": "Fluorinated molecules",
+      "abstract": "Practical access to vinyl fluorides through selective olefination and hydrolysis, with high control of double-bond geometry.",
+      "skills": [
+        "Organic synthesis",
+        "Fluorination",
+        "Reaction mechanisms"
+      ],
+      "status": "Published",
+      "topics": [
+        "synthesis"
+      ],
+      "journalAbbr": "J. Org. Chem.",
+      "volume": "88",
+      "issue": "15",
+      "pages": "10881–10904",
+      "authorsACS": "Volchkov, I.; Powell, B. V.; Zatolochnaya, O. V.; Leung, J. C.; Pennino, S.; Wu, L.; Gonnella, N. C.; Bhaskararao, B.; Kozlowski, M. C.; Reeves, J. T.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2025",
+      "year": "2025",
+      "title": "Probing the Oxidative Addition Transition State in Nickel Metallaphotoredox Catalysis Using Intramolecular ¹³C Kinetic Isotope Effects",
+      "journal": "Journal of the American Chemical Society",
+      "authors": "Chetan Joshi; Julia R. Dorsheimer; Victor O. Nyagilo; et al.",
+      "doi": "10.1021/jacs.4c10182",
+      "group": "radical",
+      "sub": "Kinetic isotope effects",
+      "abstract": "Uses intramolecular carbon-13 kinetic isotope effects and DFT to probe oxidative addition in nickel metallaphotoredox catalysis.",
+      "skills": [
+        "KIE",
+        "DFT",
+        "Metallaphotoredox"
+      ],
+      "status": "Published",
+      "topics": [
+        "radical"
+      ],
+      "journalAbbr": "J. Am. Chem. Soc.",
+      "volume": "147",
+      "issue": "28",
+      "pages": "24275–24285",
+      "authorsACS": "Joshi, C.; Dorsheimer, J. R.; Nyagilo, V. O.; Ramos, M. C.; Banerjee, S.; Bhaskararao, B.; Shen, Y.; Rovis, T.; Vetticatt, M. J.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2026a",
+      "year": "2026",
+      "title": "Ligand-Controlled Pd(II)-Catalyzed α,β-Unsaturation and β-Arylation of Long-Chain Acids",
+      "journal": "Journal of the American Chemical Society",
+      "authors": "Suman Maji; Sourav Maiti; Edamyakala Anusha; Srimanta Guin; Bangaru Bhaskararao; Debabrata Maiti",
+      "doi": "10.1021/jacs.6c00988",
+      "group": "ch",
+      "sub": "C(sp³)–H activation",
+      "abstract": "Pd-mediated β-methylene C–H activation leads to in situ unsaturation followed by Heck-type β-arylation of carboxylic acids.",
+      "skills": [
+        "Pd catalysis",
+        "C(sp³)–H activation",
+        "Synthetic methods"
+      ],
+      "status": "Published",
+      "topics": [
+        "ch"
+      ],
+      "authorsACS": "Maji, S.; Maiti, S.; Anusha, E.; Guin, S.; Bhaskararao, B.; Maiti, D.",
+      "journalAbbr": "J. Am. Chem. Soc.",
+      "volume": "148",
+      "issue": "21",
+      "pages": "21558–21571",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2026b",
+      "year": "2026",
+      "title": "Photoinduced Alkynylation of Alkylboronic Acids and Alkyl-Boronates via Aminyl Radical Transfer (ART) Strategy",
+      "journal": "Chemistry – A European Journal",
+      "authors": "Akash Bisoyi; Ruveen Murgeshan; Gayathri K G; Alisha Rani Tripathy; Amit Behera; Bangaru Bhaskararao; Veera Reddy Yatham",
+      "doi": "10.1002/chem.71121",
+      "group": "radical",
+      "sub": "Radical transfer",
+      "abstract": "Photoinduced catalyst-free alkynylation of alkylboron reagents; mechanistic work supports an aminyl radical transfer pathway.",
+      "skills": [
+        "Radical chemistry",
+        "Photochemistry",
+        "Mechanisms"
+      ],
+      "status": "Published",
+      "topics": [
+        "radical"
+      ],
+      "journalAbbr": "Chem. Eur. J.",
+      "volume": "32",
+      "issue": "32",
+      "pages": "e71121",
+      "authorsACS": "Bisoyi, A.; Murgeshan, R.; Gayathri, K. G.; Tripathy, A. R.; Behera, A.; Bhaskararao, B.; Yatham, V. R.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2026c",
+      "year": "2026",
+      "title": "Umpolung Character of Styrenes: Mechanism and Stereoselective Studies of α, β-Substituted Amino Acids Using Chiral Ir-Phosphine Complexes",
+      "journal": "Journal of Computational Chemistry",
+      "authors": "Bangaru Bhaskararao; Juliana J. Antonio; Elfi Kraka",
+      "doi": "10.1002/jcc.70477",
+      "group": "stereo",
+      "sub": "Chiral Ir catalysis",
+      "abstract": "DFT and local-mode analysis explore divergent styrene reactivity and selectivity in iridium-phosphine-catalyzed amino acid formation.",
+      "skills": [
+        "DFT",
+        "Local mode analysis",
+        "Stereochemistry",
+        "Ir catalysis"
+      ],
+      "status": "Published",
+      "topics": [
+        "stereo"
+      ],
+      "journalAbbr": "J. Comput. Chem.",
+      "volume": "47",
+      "issue": "21",
+      "pages": "e70477",
+      "authorsACS": "Bhaskararao, B.; Antonio, J. J.; Kraka, E.",
+      "bibliographyVerified": "2026-10-27"
+    },
+    {
+      "id": "b2026d",
+      "year": "2026",
+      "title": "Heterogeneous Palladium(0) Catalysts for C(sp³)–H Activation and Coupling to Form Hindered C–C Bonds",
+      "journal": "ACS Catalysis",
+      "authors": "Prakash Basnet; Bangaru Bhaskararao; Peter A. Amadeo; et al.",
+      "doi": "10.1021/acscatal.6c04199",
+      "group": "ch",
+      "sub": "C(sp³)–H activation",
+      "abstract": "Mechanistic and computational evidence supports heterogeneous Pd catalysis for functionalization of challenging tertiary C–H sites.",
+      "skills": [
+        "DFT",
+        "Heterogeneous Pd",
+        "C(sp³)–H activation"
+      ],
+      "status": "Published",
+      "topics": [
+        "ch"
+      ],
+      "journalAbbr": "ACS Catal.",
+      "volume": "16",
+      "issue": "15",
+      "pages": "15249–15261",
+      "authorsACS": "Basnet, P.; Bhaskararao, B.; Amadeo, P. A.; Hendrick, C. E.; VanGelder, K. F.; Curto, J. M.; Kim, D. Y.; Hong, G.; Kozlowski, M. C.",
+      "bibliographyVerified": "2026-10-27"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-b2015",
+      "title": "Origin of Stereodivergence in Cooperative Asymmetric Catalysis with Simultaneous Involvement of Two Chiral Catalysts",
+      "group": "dual",
+      "sub": "Metal–Organo",
+      "status": "Published",
+      "year": "2015",
+      "summary": "DFT transition-state study of iridium-phosphoramidite and cinchona amine cooperative catalysis; catalyst configuration controls stereodivergent outcomes.",
+      "methods": [
+        "DFT",
+        "Transition states",
+        "NCI",
+        "Stereodivergence"
+      ],
+      "publicationId": "b2015",
+      "link": ""
+    },
+    {
+      "id": "project-b2016",
+      "title": "Directing group assisted meta-hydroxylation by C–H activation",
+      "group": "ch",
+      "sub": "C(sp²)–H activation",
+      "status": "Published",
+      "year": "2016",
+      "summary": "Template-assisted meta hydroxylation of aromatic C–H bonds, combining experiment and mechanistic computations, including HFIP solvent effects.",
+      "methods": [
+        "DFT",
+        "C–H functionalization",
+        "Mechanism"
+      ],
+      "publicationId": "b2016",
+      "link": ""
+    },
+    {
+      "id": "project-b2017a",
+      "title": "Catalytic Arene meta-C–H Functionalization Exploiting a Quinoline-Based Template",
+      "group": "ch",
+      "sub": "C(sp²)–H activation",
+      "status": "Published",
+      "year": "2017",
+      "summary": "Quinoline-based directing group supports meta alkenylation and acetoxylation; mechanistic studies include DFT and spectroscopy.",
+      "methods": [
+        "DFT",
+        "Pd catalysis",
+        "Meta selectivity"
+      ],
+      "publicationId": "b2017a",
+      "link": ""
+    },
+    {
+      "id": "project-b2017b",
+      "title": "Experimental and Computational Studies on Remote γ-C(sp³)–H Silylation and Germanylation of Aliphatic Carboxamides",
+      "group": "ch",
+      "sub": "C(sp³)–H activation",
+      "status": "Published",
+      "year": "2017",
+      "summary": "Pd(II) bidentate-directed remote gamma C–H silylation/germanylation; mechanistic experiments and DFT assess elementary steps.",
+      "methods": [
+        "DFT",
+        "Remote C–H activation",
+        "Pd chemistry"
+      ],
+      "publicationId": "b2017b",
+      "link": ""
+    },
+    {
+      "id": "project-b2017c",
+      "title": "Asymmetric Dual Chiral Catalysis using Iridium Phosphoramidites and Diarylprolinol Silyl Ethers: Insights into Stereodivergence",
+      "group": "dual",
+      "sub": "Metal–Organo",
+      "status": "Published",
+      "year": "2017",
+      "summary": "DFT study of iridium phosphoramidite and organocatalyst enamine pathways; noncovalent interactions influence relative stereoselectivity.",
+      "methods": [
+        "DFT",
+        "NCI",
+        "Iridium catalysis",
+        "Stereoselectivity"
+      ],
+      "publicationId": "b2017c",
+      "link": ""
+    },
+    {
+      "id": "project-b2017d",
+      "title": "Exploring the Mechanism and Stereoselectivity in Chiral Cinchona-Catalyzed Heterodimerization of Ketenes",
+      "group": "organo",
+      "sub": "Ketenes & cycloadditions",
+      "status": "Published",
+      "year": "2017",
+      "summary": "M06-2X DFT analysis of [2+2] ketene heterodimerization to β-lactones; cinchona catalysis and LiClO4 affect stereocontrol.",
+      "methods": [
+        "DFT",
+        "Cinchona catalysis",
+        "NCI",
+        "Stereoselectivity"
+      ],
+      "publicationId": "b2017d",
+      "link": ""
+    },
+    {
+      "id": "project-b2018",
+      "title": "Two chiral catalysts in action: insights into cooperativity and stereoselectivity in proline and cinchona-thiourea dual organocatalysis",
+      "group": "dual",
+      "sub": "Organo–Organo",
+      "status": "Published",
+      "year": "2018",
+      "summary": "Computational investigation of proline and cinchona-thiourea dual organocatalysis, catalyst compatibility and stereoselectivity.",
+      "methods": [
+        "DFT",
+        "Organocatalysis",
+        "Transition states"
+      ],
+      "publicationId": "b2018",
+      "link": ""
+    },
+    {
+      "id": "project-b2020a",
+      "title": "Is silver a mere terminal oxidant in palladium catalyzed C–H bond activation reactions?",
+      "group": "ch",
+      "sub": "Oxidants & additives",
+      "status": "Published",
+      "year": "2020",
+      "summary": "DFT suggests silver can play an active Pd–Ag bimetallic role in four aromatic C–H activation reactions, not merely serve as a terminal oxidant.",
+      "methods": [
+        "DFT",
+        "Pd–Ag",
+        "C(sp²)–H activation"
+      ],
+      "publicationId": "b2020a",
+      "link": ""
+    },
+    {
+      "id": "project-b2020b",
+      "title": "A unified machine-learning protocol for asymmetric catalysis as a proof of concept demonstration using asymmetric hydrogenation",
+      "group": "ml",
+      "sub": "Asymmetric catalysis ML",
+      "status": "Published",
+      "year": "2020",
+      "summary": "Proof-of-concept machine-learning workflow for asymmetric hydrogenation catalysis, combining chemical descriptors and predictive modeling.",
+      "methods": [
+        "Machine learning",
+        "Catalysis",
+        "Molecular descriptors"
+      ],
+      "publicationId": "b2020b",
+      "link": ""
+    },
+    {
+      "id": "project-b2020c",
+      "title": "Insights on Absolute and Relative Stereocontrol in Stereodivergent Cooperative Catalysis",
+      "group": "dual",
+      "sub": "Metal–Metal",
+      "status": "Published",
+      "year": "2020",
+      "summary": "DFT explains how chiral Cu–Walphos and Ir-phosphoramidite catalyst combinations control stereodivergence via noncovalent interactions.",
+      "methods": [
+        "DFT",
+        "Cu/Ir dual catalysis",
+        "NCI"
+      ],
+      "publicationId": "b2020c",
+      "link": ""
+    },
+    {
+      "id": "project-b2020d",
+      "title": "Rational design of metal–ligands for the conversion of CH₄ and CO₂ to acetates: role of acids and Lewis acids",
+      "group": "materials",
+      "sub": "CO₂ / CH₄ conversion",
+      "status": "Published",
+      "year": "2020",
+      "summary": "Computational screening of Ru/Rh/Ir metal–ligand complexes for conversion of methane and carbon dioxide, examining acid and Lewis acid effects.",
+      "methods": [
+        "DFT",
+        "Catalysis",
+        "CO₂ conversion"
+      ],
+      "publicationId": "b2020d",
+      "link": ""
+    },
+    {
+      "id": "project-b2021",
+      "title": "Inherent Selectivity of Pd C–H Activation from Different Metal Oxidation States",
+      "group": "ch",
+      "sub": "Mixed sp²/sp³ selectivity",
+      "status": "Published",
+      "year": "2021",
+      "summary": "Mechanistic study comparing C–H activation pathways at palladium in different oxidation states and associated selectivity.",
+      "methods": [
+        "DFT",
+        "Oxidation state",
+        "C–H activation"
+      ],
+      "publicationId": "b2021",
+      "link": ""
+    },
+    {
+      "id": "project-b2022",
+      "title": "Ir and NHC Dual Chiral Synergetic Catalysis: Mechanism and Stereoselectivity in γ-Butyrolactone Formation",
+      "group": "dual",
+      "sub": "Metal–Organo",
+      "status": "Published",
+      "year": "2022",
+      "summary": "Quantum-mechanical study of cooperative iridium and NHC catalytic cycles governing γ-butyrolactone stereoselectivity.",
+      "methods": [
+        "DFT",
+        "Ir/NHC",
+        "Transition states",
+        "NCI"
+      ],
+      "publicationId": "b2022",
+      "link": ""
+    },
+    {
+      "id": "project-b2023a",
+      "title": "Coordination modulated passivation for stable organic-inorganic perovskite solar cells",
+      "group": "materials",
+      "sub": "Perovskite passivation",
+      "status": "Published",
+      "year": "2023",
+      "summary": "Investigates coordination-modulated passivation of organic–inorganic perovskites to improve device efficiency and stability.",
+      "methods": [
+        "Materials",
+        "Interfaces",
+        "Passivation"
+      ],
+      "publicationId": "b2023a",
+      "link": ""
+    },
+    {
+      "id": "project-b2023b",
+      "title": "Practical Synthesis of Terminal Vinyl Fluorides",
+      "group": "synthesis",
+      "sub": "Fluorinated molecules",
+      "status": "Published",
+      "year": "2023",
+      "summary": "Practical access to vinyl fluorides through selective olefination and hydrolysis, with high control of double-bond geometry.",
+      "methods": [
+        "Organic synthesis",
+        "Fluorination",
+        "Reaction mechanisms"
+      ],
+      "publicationId": "b2023b",
+      "link": ""
+    },
+    {
+      "id": "project-b2025",
+      "title": "Probing the Oxidative Addition Transition State in Nickel Metallaphotoredox Catalysis Using Intramolecular ¹³C Kinetic Isotope Effects",
+      "group": "radical",
+      "sub": "Kinetic isotope effects",
+      "status": "Published",
+      "year": "2025",
+      "summary": "Uses intramolecular carbon-13 kinetic isotope effects and DFT to probe oxidative addition in nickel metallaphotoredox catalysis.",
+      "methods": [
+        "KIE",
+        "DFT",
+        "Metallaphotoredox"
+      ],
+      "publicationId": "b2025",
+      "link": ""
+    },
+    {
+      "id": "project-b2026a",
+      "title": "Ligand-Controlled Pd(II)-Catalyzed α,β-Unsaturation and β-Arylation of Long-Chain Acids",
+      "group": "ch",
+      "sub": "C(sp³)–H activation",
+      "status": "Published",
+      "year": "2026",
+      "summary": "Pd-mediated β-methylene C–H activation leads to in situ unsaturation followed by Heck-type β-arylation of carboxylic acids.",
+      "methods": [
+        "Pd catalysis",
+        "C(sp³)–H activation",
+        "Synthetic methods"
+      ],
+      "publicationId": "b2026a",
+      "link": ""
+    },
+    {
+      "id": "project-b2026b",
+      "title": "Photoinduced Alkynylation of Alkylboronic Acids and Alkyl-Boronates via Aminyl Radical Transfer (ART) Strategy",
+      "group": "radical",
+      "sub": "Radical transfer",
+      "status": "Published",
+      "year": "2026",
+      "summary": "Photoinduced catalyst-free alkynylation of alkylboron reagents; mechanistic work supports an aminyl radical transfer pathway.",
+      "methods": [
+        "Radical chemistry",
+        "Photochemistry",
+        "Mechanisms"
+      ],
+      "publicationId": "b2026b",
+      "link": ""
+    },
+    {
+      "id": "project-b2026c",
+      "title": "Umpolung Character of Styrenes: Mechanism and Stereoselective Studies of α, β-Substituted Amino Acids Using Chiral Ir-Phosphine Complexes",
+      "group": "stereo",
+      "sub": "Chiral Ir catalysis",
+      "status": "Published",
+      "year": "2026",
+      "summary": "DFT and local-mode analysis explore divergent styrene reactivity and selectivity in iridium-phosphine-catalyzed amino acid formation.",
+      "methods": [
+        "DFT",
+        "Local mode analysis",
+        "Stereochemistry",
+        "Ir catalysis"
+      ],
+      "publicationId": "b2026c",
+      "link": ""
+    },
+    {
+      "id": "project-b2026d",
+      "title": "Heterogeneous Palladium(0) Catalysts for C(sp³)–H Activation and Coupling to Form Hindered C–C Bonds",
+      "group": "ch",
+      "sub": "C(sp³)–H activation",
+      "status": "Published",
+      "year": "2026",
+      "summary": "Mechanistic and computational evidence supports heterogeneous Pd catalysis for functionalization of challenging tertiary C–H sites.",
+      "methods": [
+        "DFT",
+        "Heterogeneous Pd",
+        "C(sp³)–H activation"
+      ],
+      "publicationId": "b2026d",
+      "link": ""
+    },
+    {
+      "id": "pr6",
+      "title": "Cycloetherification TS2 Selectivity Benchmark",
+      "group": "stereo",
+      "sub": "Cycloetherification",
+      "status": "Ongoing",
+      "year": "2026",
+      "summary": "Mechanistic and conformational evaluation of TS2 across 17 R3 variants using CREST/xTB, Gaussian, stereochemical validation, and free-energy analysis. Preliminary results are still being benchmarked.",
+      "methods": [
+        "Gaussian",
+        "CREST/xTB",
+        "Transition-state ensembles",
+        "GoodVibes"
+      ],
+      "publicationId": "",
+      "link": ""
+    },
+    {
+      "id": "pr8",
+      "title": "Free Energy Perturbation (FEP) Workflows",
+      "group": "drug",
+      "sub": "Free Energy Perturbation",
+      "status": "In development",
+      "year": "2026",
+      "summary": "Developing computational workflows for free-energy analysis in molecular modeling.",
+      "methods": [
+        "FEP",
+        "Molecular simulation"
+      ],
+      "publicationId": "",
+      "link": ""
+    },
+    {
+      "id": "pr9",
+      "title": "AI / QM-MM / MD Integration",
+      "group": "drug",
+      "sub": "QM/MM & MD",
+      "status": "Research direction",
+      "year": "2026",
+      "summary": "Integration of quantum-mechanical descriptions with molecular simulation and data-driven modeling for drug-discovery applications.",
+      "methods": [
+        "QM/MM",
+        "MD",
+        "Machine learning"
+      ],
+      "publicationId": "",
+      "link": ""
+    }
+  ],
+  "skills": [
+    {
+      "group": "Quantum Chemistry Programs",
+      "items": [
+        "Gaussian",
+        "ORCA",
+        "Q-Chem",
+        "Electronic structure",
+        "Transition-state optimization",
+        "IRC",
+        "Frequency calculations"
+      ]
+    },
+    {
+      "group": "Ab Initio & Materials",
+      "items": [
+        "VASP",
+        "Periodic DFT",
+        "Surface modeling",
+        "Perovskite interfaces"
+      ]
+    },
+    {
+      "group": "Sampling & Simulation",
+      "items": [
+        "CREST",
+        "GFN2-xTB",
+        "Conformer searches",
+        "Molecular dynamics",
+        "QM/MM",
+        "ONIOM",
+        "Free energy perturbation"
+      ]
+    },
+    {
+      "group": "Mechanistic Analysis",
+      "items": [
+        "DFT",
+        "NBO",
+        "QTAIM",
+        "NCI",
+        "Kinetic isotope effects",
+        "DLPNO-CCSD(T)",
+        "Stereochemistry",
+        "Boltzmann analysis"
+      ]
+    },
+    {
+      "group": "Programming & Data",
+      "items": [
+        "Python",
+        "C",
+        "C++",
+        "SQL",
+        "RDKit",
+        "DeepChem",
+        "scikit-learn",
+        "NumPy",
+        "pandas"
+      ]
+    },
+    {
+      "group": "Research Computing",
+      "items": [
+        "Linux",
+        "Bash",
+        "Git / GitHub",
+        "HPC",
+        "PBS/Torque",
+        "Gaussian job automation"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "years": "2026 – Present",
+      "role": "Brain Pool Fellow / Research Professor",
+      "place": "Ewha Womans University",
+      "details": "Computational molecular modeling and AI-oriented drug-discovery research."
+    },
+    {
+      "years": "2022 – 2025",
+      "role": "Postdoctoral Researcher",
+      "place": "Southern Methodist University",
+      "details": "Quantum-chemical studies of reaction mechanisms and catalysis."
+    },
+    {
+      "years": "2022",
+      "role": "Postdoctoral Researcher",
+      "place": "Binghamton University",
+      "details": "Collaborative computational chemistry research.",
+      "showOnWebsite": false,
+      "editorialNote": "Earlier draft lists a 2022 postdoctoral appointment; verify dates and position before republishing."
+    },
+    {
+      "years": "2020 – 2022",
+      "role": "Postdoctoral Researcher",
+      "place": "University of Pennsylvania",
+      "details": "Mechanistic quantum-chemical studies of transition-metal and cooperative catalysis."
+    },
+    {
+      "years": "2018 – 2020",
+      "role": "Postdoctoral Researcher",
+      "place": "UNIST",
+      "details": "Computational chemistry and materials-related research."
+    },
+    {
+      "years": "2012 – 2018",
+      "role": "Ph.D. Research",
+      "place": "Indian Institute of Technology Bombay",
+      "details": "Computational studies of asymmetric dual chiral catalysis."
+    }
+  ],
+  "customCss": "",
+  "customHtml": "<div class=\"cv-overview\"><h3>Academic CV at a glance</h3><div class=\"cv-overview-grid\"><article><h4>Education</h4><p><strong>Ph.D. in Computational Chemistry</strong><br>Indian Institute of Technology Bombay · doctoral research on asymmetric dual chiral catalysis</p></article><article><h4>Current appointment</h4><p><strong>Brain Pool Researcher / Research Professor</strong><br>Ewha Womans University, Seoul · 2026–present</p></article><article><h4>Previous research appointments</h4><p>Southern Methodist University · 2022–2025<br>University of Pennsylvania · 2020–2022<br>UNIST · 2018–2020<br>Binghamton University · 2022</p></article><article><h4>Research expertise</h4><p>Quantum chemistry, reaction mechanism modeling, transition-state analysis, molecular simulation, scientific programming and machine learning.</p></article></div><p class=\"small-note\">The full downloadable CV PDF has not yet been supplied. The final online record will be reviewed against the official CV before public release.</p></div>",
+  "metrics": {
+    "indexedCitations": 772,
+    "hIndex": 11,
+    "source": "Rankless indexed works (not Google Scholar)",
+    "reviewed": "2026-10-26",
+    "sourceUrl": "https://www.rankless.org/authors/bangaru-bhaskararao"
+  }
+}

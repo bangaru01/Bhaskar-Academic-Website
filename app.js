@@ -23,7 +23,7 @@
       const $ = sel => document.querySelector(sel);
       const esc = s => String(s ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
       const attr = esc;
-      const category = id => data.categories.find(c => c.id === id) || data.categories[0] || { id: 'other', name: 'Other', code: '00', subs: [], summary: '' };
+      const category = id => id === 'scholar-auto' ? { id, name: 'Google Scholar (new addition)', code: '', subs: [], summary: '' } : data.categories.find(c => c.id === id) || data.categories[0] || { id: 'other', name: 'Other', code: '00', subs: [], summary: '' };
       const norm = v => Array.isArray(v) ? v : [];
       const statusClass = s => s === 'Published' ? 'published' : s === 'Ongoing' ? 'ongoing' : 'development';
       const save = () => {
@@ -149,8 +149,11 @@
     })
     .sort((a, b) => Number(b.year) - Number(a.year));
 
-  $('#pub-count').textContent =
-    `${publications.length} of ${data.publications.length} journal articles`;
+  const autoCount = data.publications.filter(p => p.autoImported).length;
+  const curatedCount = data.publications.length - autoCount;
+  $('#pub-count').textContent = autoCount
+    ? `${publications.length} of ${data.publications.length} records (${curatedCount} curated; ${autoCount} Scholar additions)`
+    : `${publications.length} of ${data.publications.length} journal articles`;
 
   // 4. Format the journal citation only with known bibliographic fields.
   function formatCitation(p) {
@@ -184,6 +187,7 @@
 
   $('#pub-list').innerHTML = publications.map(p => {
     const doiUrl = asDoi(p.doi);
+    const scholarUrl = /^https:\/\//.test(p.scholarLink || '') ? p.scholarLink : '';
     const authors = p.authorsACS || p.authors ||
       'Author list pending verification';
     const researchArea = category(p.group).name;
@@ -219,11 +223,10 @@
               </a>
             ` : ''}
 
-            <button type="button"
+            ${p.autoImported && scholarUrl ? `<a href="${attr(scholarUrl)}" target="_blank" rel="noopener noreferrer">Google Scholar record ↗</a>` : ''}
+            ${p.autoImported ? '<span class="tag">Auto-added · Citation metadata pending</span>' : `<button type="button"
                     data-category="${attr(p.group)}"
-                    data-go-research="1">
-              Related projects ↗
-            </button>
+                    data-go-research="1">Related projects ↗</button>`}
           </div>
         </div>
       </article>
@@ -273,7 +276,7 @@
               <span>Visit profile ↗</span>
             </a>
           `).join('');
-        $('#quick-paper-count').textContent = `${data.publications.length} journal articles`;
+        $('#quick-paper-count').textContent = `${data.publications.length} publication records`;
         $('#quick-project-count').textContent = `${data.projects.length} research records`;
       }
 
@@ -358,5 +361,78 @@
         if (studio) studio.hidden = true;
       }
 
+
+      // Thesis and optional photo: read from a separate, editable JSON file.
+      // The thesis is NOT counted among journal publications.
+      async function renderAcademicExtras() {
+        let config;
+        try {
+          const res = await fetch('./academic_extras.json', { cache: 'no-store' });
+          if (!res.ok) return;
+          config = await res.json();
+        } catch (err) { console.warn('Optional academic extras unavailable', err); return; }
+        const style = document.createElement('style');
+        style.textContent = `
+          .academic-thesis { margin-top:28px; border:1px solid var(--line); border-radius:16px; padding:22px 24px; background:var(--paper); }
+          .academic-thesis h3 { margin:6px 0 9px; font-size:20px; }
+          .academic-thesis p { color:var(--muted); margin:6px 0 12px; }
+          .academic-thesis a { color:var(--green); text-decoration:underline; font-weight:750; }
+          .academic-photo { border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.24); background:rgba(255,255,255,.065); text-align:center; }
+          .academic-photo img { display:block; max-width:100%; width:100%; max-height:320px; object-fit:cover; object-position:center 20%; }
+          .academic-photo figcaption { color:#d4e8df; font-size:12px; padding:10px; }
+        `;
+        style.textContent += `@media (max-width:800px){.hero-right:has(.academic-photo){display:block}.hero-right:has(.academic-photo) .molecule-card{display:none}}`;
+        document.head.appendChild(style);
+        const thesis = config.thesis || {};
+        const pubLayout = document.querySelector('#publications .pub-layout');
+        if (pubLayout && thesis.title && !document.querySelector('#academic-thesis')) {
+          const card = document.createElement('section');
+          card.className = 'academic-thesis';
+          card.id = 'academic-thesis';
+          const small = document.createElement('div');
+          small.className = 'eyebrow';
+          small.textContent = 'DOCTORAL THESIS · SEPARATE FROM JOURNAL ARTICLES';
+          const heading = document.createElement('h3');
+          heading.textContent = thesis.title;
+          const meta = document.createElement('p');
+          meta.textContent = `Ph.D. · ${thesis.institution || 'IIT Bombay'} · ${thesis.year || '2019'}${thesis.supervisor ? ' · Supervisor: ' + thesis.supervisor : ''}`;
+          card.append(small, heading, meta);
+          if (thesis.libraryUrl && /^https:\/\//.test(thesis.libraryUrl)) {
+            const link = document.createElement('a');
+            link.href = thesis.libraryUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = 'IIT Bombay Thesis Library / ETD ↗';
+            card.append(link);
+            const note = document.createElement('p');
+            note.style.fontSize = '12px';
+            note.textContent = 'Institutional thesis access page; a direct public PDF link has not yet been confirmed.';
+            card.append(note);
+          }
+          pubLayout.insertAdjacentElement('afterend', card);
+        }
+        const photo = config.photo || {};
+        if (photo.url && /^(https:\/\/|[\w.\/-]+\.(jpg|jpeg|png|webp))$/i.test(photo.url)) {
+          const right = document.querySelector('.hero-right');
+          if (right && !document.querySelector('#academic-photo')) {
+            const frame = document.createElement('figure');
+            frame.className = 'academic-photo';
+            frame.id = 'academic-photo';
+            frame.style.margin = '0';
+            const img = document.createElement('img');
+            img.src = photo.url;
+            img.alt = photo.alt || 'Academic portrait';
+            img.addEventListener('error', () => frame.remove(), { once: true });
+            frame.append(img);
+            if (photo.caption) {
+              const caption = document.createElement('figcaption');
+              caption.textContent = photo.caption;
+              frame.append(caption);
+            }
+            right.prepend(frame);
+          }
+        }
+      }
       renderAll();
+      void renderAcademicExtras();
     })();

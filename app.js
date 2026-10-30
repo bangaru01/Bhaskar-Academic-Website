@@ -405,7 +405,7 @@
           const headText = document.createElement('div');
           const eyebrow = document.createElement('div');
           eyebrow.className = 'eyebrow';
-          eyebrow.textContent = 'DOCTORAL RESEARCH';
+          eyebrow.textContent = 'DOCTORAL THESIS';
           const sectionHeading = document.createElement('h2');
           sectionHeading.textContent = 'Ph.D. thesis.';
           const description = document.createElement('p');
@@ -422,19 +422,6 @@
           const meta = document.createElement('p');
           meta.textContent = `Ph.D. Thesis · ${thesis.institution || 'IIT Bombay'} · ${thesis.year || '2019'}`;
           card.append(title, meta);
-
-          if (thesis.libraryUrl && /^https:\/\//.test(thesis.libraryUrl)) {
-            const link = document.createElement('a');
-            link.href = thesis.libraryUrl;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.textContent = 'IIT Bombay Thesis Library / ETD ↗';
-            card.append(link);
-            const note = document.createElement('p');
-            note.style.fontSize = '12px';
-            note.textContent = 'This opens the institutional thesis portal, not a verified direct thesis record.';
-            card.append(note);
-          }
 
           container.append(head, card);
           section.append(container);

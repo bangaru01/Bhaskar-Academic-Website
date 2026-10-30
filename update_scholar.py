@@ -1,11 +1,16 @@
 """Update the website's Google Scholar snapshot via the private SerpApi key.
 
-The published bibliography is never edited by this script. Newly appearing
-Google Scholar entries are recorded for manual review in scholar_monitor.json.
+New Google Scholar journal papers are automatically merged into research_data.json.
+Existing curated entries are preserved; duplicates and theses are skipped.
+The photo and PhD thesis have their own separate presentation on the website.
 """
 
 import datetime as dt
 import json
+import hashlib
+import re
+import unicodedata
+from difflib import SequenceMatcher
 import os
 import pathlib
 import urllib.error
@@ -70,6 +75,96 @@ def record_from_article(article):
     }
 
 
+
+
+def normalize_title(title):
+    # Case-, accent-, punctuation-insensitive comparison to protect curated entries.
+    title = unicodedata.normalize("NFKD", str(title or "")).casefold()
+    title = "".join(c for c in title if not unicodedata.combining(c))
+    return " ".join(re.findall(r"[a-z0-9]+", title))
+
+
+def matching_title(a, b):
+    a, b = normalize_title(a), normalize_title(b)
+    if not a or not b:
+        return False
+    if a == b:
+        return True
+    # Avoid adding variant punctuation / Greek symbol renderings as duplicates.
+    ratio = SequenceMatcher(None, a, b).ratio()
+    left, right = set(a.split()), set(b.split())
+    token_overlap = len(left & right) / max(1, len(left | right))
+    return ratio >= 0.92 or (ratio >= 0.83 and token_overlap >= 0.72)
+
+
+def is_thesis(article):
+    title = normalize_title(article.get("title"))
+    publication = normalize_title(article.get("publication"))
+    text = " ".join([title, publication])
+    if any(word in text for word in (
+        "phd thesis", "ph d thesis", "doctoral thesis", "dissertation",
+        "doctoral dissertation", "phd dissertation", "masters thesis",
+    )):
+        return True
+    # Explicit title of this researcher's IIT Bombay dissertation.
+    return matching_title(title, "Computational Studies on Asymmetric Dual Chiral Catalysis")
+
+
+def merge_scholar_papers(articles):
+    path = ROOT / "research_data.json"
+    data = load_json(path)
+    if not isinstance(data, dict) or not isinstance(data.get("publications"), list):
+        raise RuntimeError("Existing research_data.json publications list missing")
+    publications = data["publications"]
+    existing_titles = [p.get("title", "") for p in publications]
+    added = []
+    for article in articles:
+        if not isinstance(article, dict) or is_thesis(article):
+            continue
+        title = str(article.get("title") or "").strip()
+        year = str(article.get("year") or "").strip()
+        if len(normalize_title(title)) < 12 or not re.fullmatch(r"(?:19|20)\d{2}", year):
+            continue
+        if any(matching_title(title, old) for old in existing_titles):
+            continue
+        identifier = str(article.get("citation_id") or article.get("link") or title)
+        paper_id = "scholar-" + hashlib.sha256(identifier.encode()).hexdigest()[:12]
+        if any(pub.get("id") == paper_id for pub in publications):
+            continue
+        link = str(article.get("link") or "").strip()
+        if not link.startswith("https://"):
+            link = "https://scholar.google.com/citations?user=" + AUTHOR_ID
+        pub = {
+            "id": paper_id,
+            "year": year,
+            "title": title,
+            "journal": str(article.get("publication") or "").strip(),
+            "journalAbbr": "",
+            "authors": str(article.get("authors") or "").strip(),
+            "authorsACS": "",
+            "doi": "",
+            "volume": "",
+            "issue": "",
+            "pages": "",
+            "group": "scholar-auto",
+            "sub": "Research area pending classification",
+            "abstract": "Metadata automatically imported from Google Scholar; full citation details pending verification.",
+            "skills": [],
+            "status": "Scholar-listed",
+            "autoImported": True,
+            "scholarLink": link,
+            "scholarCitationId": str(article.get("citation_id") or ""),
+        }
+        publications.append(pub)
+        existing_titles.append(title)
+        added.append(title)
+    if added:
+        save_json(path, data)
+    print(f"Automatic Scholar additions: {len(added)}; current publication records: {len(publications)}")
+    for title in added:
+        print("Added: " + title[:120])
+    return added
+
 def update_from_data(payload):
     if payload.get("error"):
         raise RuntimeError("SerpApi returned an error; existing data preserved")
@@ -118,33 +213,40 @@ def update_from_data(payload):
         "source": "Google Scholar author profile via SerpApi (automated snapshot)",
     })
 
-    # Establish a baseline on the first run; on later runs flag newly found
-    # entries without adding them to the curated website bibliography.
+    # Preserve Scholar IDs and add genuinely new non-thesis papers to the
+    # public bibliography even if they already existed in an older baseline.
+    newly_added = merge_scholar_papers(articles)
+
+    # The monitor is an audit trail, not an approval queue.
     monitor_path = ROOT / "scholar_monitor.json"
     monitor = load_json(monitor_path)
     records = [record_from_article(a) for a in articles]
     records = [record for record in records if record]
     if monitor is None:
         monitor = {
-            "description": "Google Scholar additions for manual review only",
+            "description": "Google Scholar checks and automatic website additions",
             "seen_ids": [r["id"] for r in records],
-            "pending_review": [],
+            "discovered_records": [],
         }
         print(f"Scholar baseline created for {len(records)} entries")
     else:
         seen = set(monitor.get("seen_ids", []))
-        pending = monitor.get("pending_review", [])
+        pending = monitor.get("discovered_records", monitor.get("pending_review", []))
         pending_ids = {r.get("id") for r in pending}
         for record in records:
             if record["id"] not in seen:
+                # Additions go directly to Publications; keep an audit log.
                 if record["id"] not in pending_ids:
                     pending.append(record)
                 seen.add(record["id"])
         monitor["seen_ids"] = sorted(seen)
-        monitor["pending_review"] = pending
-        print(f"Total publication candidates pending review: {len(pending)}")
+        monitor["discovered_records"] = pending
+        monitor.pop("pending_review", None)
+        print(f"New Scholar records logged: {len(pending)}")
 
+    monitor["description"] = "Automatic website additions from the Google Scholar author profile"
     monitor["last_checked"] = today
+    monitor["auto_added_titles"] = newly_added
     save_json(citation_path, citation_data)
     save_json(monitor_path, monitor)
     print(f"Google Scholar citations: {scholar['citations']}; h-index: {scholar['hIndex']}")

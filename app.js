@@ -373,30 +373,56 @@
         } catch (err) { console.warn('Optional academic extras unavailable', err); return; }
         const style = document.createElement('style');
         style.textContent = `
-          .academic-thesis { margin-top:28px; border:1px solid var(--line); border-radius:16px; padding:22px 24px; background:var(--paper); }
+          .academic-thesis { max-width:900px; border:1px solid var(--line); border-radius:16px; padding:22px 24px; background:var(--paper); }
           .academic-thesis h3 { margin:6px 0 9px; font-size:20px; }
           .academic-thesis p { color:var(--muted); margin:6px 0 12px; }
           .academic-thesis a { color:var(--green); text-decoration:underline; font-weight:750; }
-          .academic-photo { border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.24); background:rgba(255,255,255,.065); text-align:center; }
-          .academic-photo img { display:block; max-width:100%; width:100%; max-height:320px; object-fit:cover; object-position:center 20%; }
-          .academic-photo figcaption { color:#d4e8df; font-size:12px; padding:10px; }
+          /* Photo gallery: discreet, collapsed by default, at the end of Contact. */
+          .academic-photo-gallery { margin-top:20px; padding-top:12px; max-width:300px; border-top:1px solid rgba(255,255,255,.12); }
+          .academic-photo-gallery summary { display:inline-block; color:#c0d7cb; font-size:12px; font-weight:500; text-decoration:underline; text-underline-offset:3px; cursor:pointer; list-style:none; }
+          .academic-photo-gallery summary::-webkit-details-marker { display:none; }
+          .academic-photo-gallery summary::after { content:' ▾'; }
+          .academic-photo-gallery[open] summary::after { content:' ▴'; }
+          .academic-photo-gallery summary:focus-visible { outline:2px solid #d6eea6; outline-offset:4px; }
+          .academic-photo-gallery figure { margin:14px 0 0; padding:8px; background:#f5f8f3; border-radius:12px; }
+          .academic-photo-gallery img { display:block; width:100%; height:auto; max-height:360px; object-fit:contain; border-radius:8px; }
+          .academic-photo-gallery figcaption { color:#526b60; font-size:11px; padding:7px 4px 3px; }
         `;
-        style.textContent += `@media (max-width:800px){.hero-right:has(.academic-photo){display:block}.hero-right:has(.academic-photo) .molecule-card{display:none}}`;
         document.head.appendChild(style);
         const thesis = config.thesis || {};
-        const pubLayout = document.querySelector('#publications .pub-layout');
-        if (pubLayout && thesis.title && !document.querySelector('#academic-thesis')) {
-          const card = document.createElement('section');
+        const publicationsSection = document.querySelector('#publications');
+        if (publicationsSection && thesis.title && !document.querySelector('#doctoral-thesis')) {
+          // Separate, full-width academic section: NOT part of Publications.
+          const section = document.createElement('section');
+          section.className = 'section';
+          section.id = 'doctoral-thesis';
+
+          const container = document.createElement('div');
+          container.className = 'container';
+
+          const head = document.createElement('div');
+          head.className = 'section-head';
+          const headText = document.createElement('div');
+          const eyebrow = document.createElement('div');
+          eyebrow.className = 'eyebrow';
+          eyebrow.textContent = 'DOCTORAL RESEARCH';
+          const sectionHeading = document.createElement('h2');
+          sectionHeading.textContent = 'Ph.D. thesis.';
+          const description = document.createElement('p');
+          description.className = 'section-sub';
+          description.textContent = 'Doctoral research at the Indian Institute of Technology Bombay.';
+          headText.append(eyebrow, sectionHeading, description);
+          head.append(headText);
+
+          const card = document.createElement('article');
           card.className = 'academic-thesis';
           card.id = 'academic-thesis';
-          const small = document.createElement('div');
-          small.className = 'eyebrow';
-          small.textContent = 'DOCTORAL THESIS · SEPARATE FROM JOURNAL ARTICLES';
-          const heading = document.createElement('h3');
-          heading.textContent = thesis.title;
+          const title = document.createElement('h3');
+          title.textContent = thesis.title;
           const meta = document.createElement('p');
-          meta.textContent = `Ph.D. · ${thesis.institution || 'IIT Bombay'} · ${thesis.year || '2019'}${thesis.supervisor ? ' · Supervisor: ' + thesis.supervisor : ''}`;
-          card.append(small, heading, meta);
+          meta.textContent = `Ph.D. Thesis · ${thesis.institution || 'IIT Bombay'} · ${thesis.year || '2019'}`;
+          card.append(title, meta);
+
           if (thesis.libraryUrl && /^https:\/\//.test(thesis.libraryUrl)) {
             const link = document.createElement('a');
             link.href = thesis.libraryUrl;
@@ -406,30 +432,42 @@
             card.append(link);
             const note = document.createElement('p');
             note.style.fontSize = '12px';
-            note.textContent = 'Institutional thesis access page; a direct public PDF link has not yet been confirmed.';
+            note.textContent = 'This opens the institutional thesis portal, not a verified direct thesis record.';
             card.append(note);
           }
-          pubLayout.insertAdjacentElement('afterend', card);
+
+          container.append(head, card);
+          section.append(container);
+          publicationsSection.insertAdjacentElement('afterend', section);
         }
+        // Photo is never shown on the homepage. Visitors may choose to open
+        // the discreet Photo gallery near the bottom of the Contact footer.
         const photo = config.photo || {};
         if (photo.url && /^(https:\/\/|[\w.\/-]+\.(jpg|jpeg|png|webp))$/i.test(photo.url)) {
-          const right = document.querySelector('.hero-right');
-          if (right && !document.querySelector('#academic-photo')) {
+          const contact = document.querySelector('#contact .container');
+          const bottom = contact?.querySelector('.footer-bottom');
+          if (bottom && !document.querySelector('#academic-photo-gallery')) {
+            const gallery = document.createElement('details');
+            gallery.id = 'academic-photo-gallery';
+            gallery.className = 'academic-photo-gallery';
+            const toggle = document.createElement('summary');
+            toggle.textContent = 'Photo gallery';
+            toggle.setAttribute('aria-label', 'Show or hide profile photograph');
             const frame = document.createElement('figure');
-            frame.className = 'academic-photo';
-            frame.id = 'academic-photo';
-            frame.style.margin = '0';
             const img = document.createElement('img');
             img.src = photo.url;
-            img.alt = photo.alt || 'Academic portrait';
-            img.addEventListener('error', () => frame.remove(), { once: true });
+            img.alt = photo.alt || 'Portrait';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.addEventListener('error', () => gallery.remove(), { once: true });
             frame.append(img);
             if (photo.caption) {
               const caption = document.createElement('figcaption');
               caption.textContent = photo.caption;
               frame.append(caption);
             }
-            right.prepend(frame);
+            gallery.append(toggle, frame);
+            bottom.before(gallery);
           }
         }
       }
